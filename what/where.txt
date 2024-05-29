@@ -1,0 +1,41 @@
+main.c ----- точка входа в приложения
+
+cli.h / cli.c обработка командной строки 
+
+package_manager.h / package_manager.c Основная логика управления пакетами.
+
+repository.h / repository.c управления хранилищем пакетов 
+
+dependency_manager.h и dependency_manager.c  управления зависимостями 
+
+file_manager.h и file_manager.c управления файлами пакетов 
+
+packman/
+├── src/
+│   ├── cli.c
+│   ├── cli.h
+│   ├── package_manager.c
+│   ├── package_manager.h
+│   ├── repository.c
+│   ├── repository.h
+│   ├── dependency_manager.c
+│   ├── dependency_manager.h
+│   ├── file_manager.c
+│   ├── file_manager.h
+│   └── main.c
+├── include/
+│   ├── cli.h
+│   ├── package_manager.h
+│   ├── repository.h
+│   ├── dependency_manager.h
+│   └── file_manager.h
+├── tests/
+│   ├── test_cli.c
+│   ├── test_package_manager.c
+│   ├── test_repository.c
+│   ├── test_dependency_manager.c
+│   └── test_file_manager.c
+├── data/
+│   └── packages.db  // База данных с информацией о пакетах
+├── Makefile
+└── README.md
