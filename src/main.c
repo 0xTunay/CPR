@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
     initialize();
 
     // Парсинг команд
-    parse_command(argc, argv);
+    parse_cmd(argc, argv);
 
     // Очистка ресурсов перед завершением
     cleanup();
