@@ -4,6 +4,14 @@
 #include <string.h>
 
 void parse_command(int argc, char *argv[]) {
+
+    for (int i = 0; i < argc; i++) {
+        if (i < argc - 1) {
+        }
+    }
+    for (int i = 0; i < argc; i++) {
+    }
+
     if (argc < 2) {
         printf("Usage: packman <command> [options]\n");
         return;
@@ -14,13 +22,13 @@ void parse_command(int argc, char *argv[]) {
             printf("Usage: packman install <package_name>\n");
             return;
         }
-        install_package(argv[2]);
+        install_pkg(argv[2]);
     } else if (strcmp(argv[1], "remove") == 0) {
         if (argc < 3) {
             printf("Usage: packman remove <package_name>\n");
             return;
         }
-        remove_package(argv[2]);
+        remove_pkg(argv[2]);
     } else if (strcmp(argv[1], "update") == 0) {
         if (argc < 3) {
             printf("Usage: packman update <package_name>\n");
