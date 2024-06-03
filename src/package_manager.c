@@ -1,28 +1,28 @@
 #include "package_manager.h"
-#include "repository.h"
-#include "file_manager.h"
 #include <stdio.h>
-
+#include <stdlib.h>
 
 void install_pkg(const char *pkg_name) 
 {
-    // логика установки пакета 
-    printf("installing pkg: %s\n",pkg_name);
-    // проверка зависимостей загрука и установка файлов 
-
+    char command[256];
+    snprintf(command,sizeof(command),"sudo pacman -S %s",pkg_name);
+    printf("Executing %s\n",command);
+    system(command);
 }
 
 void remove_pkg(const char *pkg_name)
-{
-    // Логика удаления пакета
-    printf("removing package: %s\n", pkg_name);
-    // Удаление файлов, обновление базы данных и т.д.
+{   
+    char command[256];
+    snprintf(command,sizeof(command),"sudo pacman -R %s",pkg_name);
+    printf("Executing %s\n",command);
+    system(command);
 }
 
 void update_package(const char *pkg_name) {
-    // Логика обновления пакета
-    printf("Updating package: %s\n", pkg_name);
-    // Проверка обновлений, загрузка и установка новых версий и т.д.
+    char command[256];
+    snprintf(command,sizeof(command),"sudo pacman -Syu %s",pkg_name);
+    printf("Executing %s\n",command);
+    system(command);
 }
 
 void initialize() {
