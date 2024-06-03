@@ -26,7 +26,7 @@ void update_package(const char *pkg_name) {
 }
 
 void initialize() {
-    // Инициализация системы (например, загрузка базы данных)
+    // Инициализация системы (например, загрузка бд)
     printf("Initializing package manager...\n");
 }
 
