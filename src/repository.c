@@ -6,10 +6,28 @@
 
 static PkgInfo packages[MAX_PKG];
 static int pkg_count = 0;
+static char *filename = "user.dat";
 
 void load_repository()
 {
     printf("loading load_repository\n");
+    
+    FILE *fp = fopen(filename,"r");
+    if(fp)
+    {
+        printf("faild to opne file%s\n",filename);
+    }
+
+    char line[100];
+    int taskNum = 1;
+
+    while (fgets(line,sizeof(line),fp))
+    {
+        printf("you can dowloand pkg:%d %s\n",taskNum,line);
+        taskNum++;
+        /* code */
+    }
+    
 }
 
 PkgInfo *get_pkg_info(const char *pkg_name){

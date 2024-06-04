@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "string.h": "c",
-        "package_manager.h": "c"
+        "package_manager.h": "c",
+        "stdio.h": "c"
     }
 }
