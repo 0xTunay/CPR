@@ -33,7 +33,7 @@ void update_package(const char *package_name) {
 }
 
 void initialize() {
-    // Инициализация
+    // Инициавввлизация
     load_repository();
 }
 
