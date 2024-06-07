@@ -26,7 +26,7 @@ void update_package(const char *package_name) {
     PkgInfo *pkg = get_pkg_info(package_name);
     if (pkg) {
         printf("Updating package %s to version %s\n", pkg->name, pkg->version);
-        // добавить код для обновления файлов пакета
+        // добавить кодыы для обновления файлов пакета
     } else {
         printf("Package %s not found\n", package_name);
     }
