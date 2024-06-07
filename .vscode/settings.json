@@ -3,6 +3,8 @@
         "string.h": "c",
         "package_manager.h": "c",
         "stdio.h": "c",
-        "dirent.h": "c"
+        "dirent.h": "c",
+        "repository.h": "c",
+        "cli.h": "c"
     }
 }

@@ -15,7 +15,8 @@ static int pkg_count = 0;
 void load_repository()
 {
     printf("loading load_repository\n");
-
+    printf("Write package which you want install\n");
+    
     DIR *dir;
     struct dirent *entry;
 
