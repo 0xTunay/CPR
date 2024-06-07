@@ -1,34 +1,72 @@
+#define _DEFAULT_SOURCE // for DT_TEG STACKOVERFLOW PEOPLE 
 #include "repository.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <dirent.h>
 
 #define MAX_PKG 100
+#define MAX_LIKE_LINGTH 256
 
 static PkgInfo packages[MAX_PKG];
+
 static int pkg_count = 0;
-static char *filename = "user.dat";
 
 void load_repository()
 {
     printf("loading load_repository\n");
-    
-    FILE *fp = fopen(filename,"r");
-    if(fp)
-    {
-        printf("faild to opne file%s\n",filename);
-    }
 
-    char line[100];
-    int taskNum = 1;
+    DIR *dir;
+    struct dirent *entry;
 
-    while (fgets(line,sizeof(line),fp))
+    dir = opendir("date");
+    if(dir == NULL)
     {
-        printf("you can dowloand pkg:%d %s\n",taskNum,line);
-        taskNum++;
-        /* code */
+        perror("Unable to open dir");
+        return;
+    }
+    while ((entry = readdir(dir)) != NULL)
+    {
+        // смотрит, является ли найденный элемент обычным файлом. Ну спиздил с гпт, а что*?
+        if(entry->d_type == DT_REG && strstr(entry->d_name,".txt"))
+        {
+            char filepath[256];
+            snprintf(filepath,sizeof(filepath), "date/%s",entry->d_name);
+
+            FILE *file = fopen(filepath,"r");
+            if(file) {
+                char line [MAX_LIKE_LINGTH];
+                PkgInfo pkg;
+                memset(&pkg,0,sizeof(PkgInfo));
+
+
+                while (fgets(line,sizeof(line),file))
+                {
+                    char *key = strtok(line,"=");
+                    char *value = strtok(NULL,"\n");
+
+                   if (strcmp(key, "name") == 0) {
+                        strcpy(pkg.name, value);
+                    } else if (strcmp(key, "version") == 0) {
+                        strcpy(pkg.version, value);
+                    } else if (strcmp(key, "description") == 0) {
+                        strcpy(pkg.description, value);
+                    } else if (strcmp(key, "author") == 0) {
+                        strcpy(pkg.author, value);
+                    } else if (strcmp(key, "dependencies") == 0) {
+                        strcpy(pkg.dependencies, value);
+                    } else if (strcmp(key, "files") == 0) {
+                        strcpy(pkg.files, value);
+                    }
+                }             
+                packages[pkg_count++] = pkg;
+                fclose(file);
+                   }
+            }
+        }
+        closedir(dir);
     }
     
-}
 
 PkgInfo *get_pkg_info(const char *pkg_name){
     for(int i = 0; i<pkg_count;i++){
@@ -48,8 +86,6 @@ void add_pkg(const PkgInfo *packege)
         printf("repositore is full\n");
     }
 }
-
-
 void remove_pkg(const char *pkg_name)
 {
     for(int i = 0;i<pkg_count;i++)

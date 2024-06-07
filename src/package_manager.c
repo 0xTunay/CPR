@@ -1,36 +1,42 @@
 #include "package_manager.h"
+#include "repository.h"
 #include <stdio.h>
-#include <stdlib.h>
 
-void install_pkg(const char *pkg_name) 
-{
-    char command[256];
-    snprintf(command,sizeof(command),"sudo pacman -S %s",pkg_name);
-    printf("Executing %s\n",command);
-    system(command);
+void install_package(const char *package_name) {
+    PkgInfo *pkg = get_pkg_info(package_name);
+    if (pkg) {
+        printf("Installing package %s version %s\n", pkg->name, pkg->version);
+        // добавить код для копирования файлов пакета
+    } else {
+        printf("Package %s not found\n", package_name);
+    }
 }
 
-void remove_pkg(const char *pkg_name)
-{   
-    char command[256];
-    snprintf(command,sizeof(command),"sudo pacman -R %s",pkg_name);
-    printf("Executing %s\n",command);
-    system(command);
+void remove_package(const char *package_name) {
+    PkgInfo *pkg = get_pkg_info(package_name);
+    if (pkg) {
+        printf("Removing package %s version %s\n", pkg->name, pkg->version);
+        // добавить код для удаления файлов пакета
+    } else {
+        printf("Package %s not found\n", package_name);
+    }
 }
 
-void update_package(const char *pkg_name) {
-    char command[256];
-    snprintf(command,sizeof(command),"sudo pacman -Syu %s",pkg_name);
-    printf("Executing %s\n",command);
-    system(command);
+void update_package(const char *package_name) {
+    PkgInfo *pkg = get_pkg_info(package_name);
+    if (pkg) {
+        printf("Updating package %s to version %s\n", pkg->name, pkg->version);
+        // добавить код для обновления файлов пакета
+    } else {
+        printf("Package %s not found\n", package_name);
+    }
 }
 
 void initialize() {
-    // Инициализация системы (например, загрузка базы данных)
-    printf("Initializing package manager...\n");
+    // Инициализация
+    load_repository();
 }
 
 void cleanup() {
-    // Очистка ресурсов перед завершением программы
-    printf("Cleaning up...\n");
+    // Очистка
 }

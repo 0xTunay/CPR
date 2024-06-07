@@ -1,15 +1,17 @@
 #ifndef REPOSITORY_H
 #define REPOSITORY_H
 
-
 typedef struct {
-    char name[128];
-    char version[32];
-    char url[256];
+    char name[256];
+    char version[256];
+    char description[1024];
+    char author[256];
+    char dependencies[1024];
+    char files[1024];
 } PkgInfo;
 
 void load_repository();
-PkgInfo * get_pkg_info(const char * pkg_name);
+PkgInfo *get_pkg_info(const char *pkg_name);
 void add_pkg(const PkgInfo *pkg);
 void remove_pkg(const char *pkg_name);
 

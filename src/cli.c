@@ -22,7 +22,7 @@ void parse_command(int argc, char *argv[]) {
             printf("Usage: packman install <package_name>\n");
             return;
         }
-        install_pkg(argv[2]);
+        install_package(argv[2]);
     } else if (strcmp(argv[1], "remove") == 0) {
         if (argc < 3) {
             printf("Usage: packman remove <package_name>\n");

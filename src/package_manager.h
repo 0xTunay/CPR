@@ -2,7 +2,7 @@
 #ifndef PACKAGE_MANAGER_H
 #define PACKAGE_MANAGER_H
 
-void install_pkg(const char *pkg_name);
+void install_package(const char *pkg_name);
 void remove_pkg(const char *pkg_name);
 void update_package(const char *package_name);
 
