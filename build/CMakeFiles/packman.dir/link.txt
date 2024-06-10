@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/packman.dir/src/main.c.o -o /home/tunay/pacman/packman  libcore.a

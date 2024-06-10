@@ -1,4 +1,4 @@
-#include "dependency_manager.h"
+#include "../include/dependency_manager.h"
 #include <stdio.h>
 
 void check_dependencies(const char *pkg_name) 

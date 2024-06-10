@@ -1,5 +1,5 @@
 #define _DEFAULT_SOURCE // for DT_TEG STACKOVERFLOW PEOPLE 
-#include "repository.h"
+#include "../include/repository.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,13 +9,11 @@
 #define MAX_LIKE_LINGTH 256
 
 static PkgInfo packages[MAX_PKG];
-
 static int pkg_count = 0;
-
+char pkg_name[MAX_NAME_LINE];
 void load_repository()
 {
-    printf("loading load_repository\n");
-    printf("Write package which you want install\n");
+    printf("loading load_repository...\n");
     
     DIR *dir;
     struct dirent *entry;
@@ -45,6 +43,7 @@ void load_repository()
                 {
                     char *key = strtok(line,"=");
                     char *value = strtok(NULL,"\n");
+
 
                    if (strcmp(key, "name") == 0) {
                         strcpy(pkg.name, value);

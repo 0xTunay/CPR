@@ -1,4 +1,4 @@
-name=example-package
+name=aur
 version=1.0.0
 description=This is an example package
 author=Author Name

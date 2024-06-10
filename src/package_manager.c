@@ -1,5 +1,5 @@
-#include "package_manager.h"
-#include "repository.h"
+#include "../include/package_manager.h"
+#include "../include/repository.h"
 #include <stdio.h>
 
 void install_package(const char *package_name) {

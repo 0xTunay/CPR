@@ -13,15 +13,10 @@ file_manager.h и file_manager.c управления файлами пакет�
 packman/
 ├── src/
 │   ├── cli.c
-│   ├── cli.h
 │   ├── package_manager.c
-│   ├── package_manager.h
 │   ├── repository.c
-│   ├── repository.h
 │   ├── dependency_manager.c
-│   ├── dependency_manager.h
 │   ├── file_manager.c
-│   ├── file_manager.h
 │   └── main.c
 ├── include/
 │   ├── cli.h
@@ -36,8 +31,8 @@ packman/
 │   ├── test_dependency_manager.c
 │   └── test_file_manager.c
 ├── data/
-│   └── packages.db  // База данных с информацией о пакетах
-├── Makefile
+│   └── aur.txt
+├── CMakeLists.txt
 └── README.md
 
 

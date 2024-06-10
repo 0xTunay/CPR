@@ -1,14 +1,40 @@
 // main.c
-#include "cli.h"
-#include "repository.h"
+#include "../include/cli.h"
+#include "../include/repository.h"
 #include <stdio.h>
-#define MAX_NAME_LINE 100
+#include <string.h>
 
 int main(int argc, char *argv[]) {
-    load_repository();
+    char user[MAX_NAME_LINE];
+ 
+ 
+    printf("what do you want install?\n");
+    parse_command(argc,argv);
+    scanf("%s",user);
+    strcpy(pkg_name,user);
 
-    char pkg_name[MAX_NAME_LINE];
-    scanf("%s",pkg_name);
+    
+/*
+    если тру, то дальше продолжать код и вывести repostiroy, а если такого пакета не найдено, то рентун
+*/
+// сделать чтобы перед этим выводилась инфа о пакете
+    printf("Do you want to install %s repository? (Yes/No): ", pkg_name);
+    scanf("%s",user);
+
+    if (fgets(user, sizeof(user), stdin) != NULL) {
+        user[strcspn(user, "\n")] = '\0';
+    }
+
+    if (strcmp(user, "Yes") == 0) {
+        parse_command(argc, argv);
+    } else {
+        printf("Installation aborted.\n");
+        return 0;
+    }
+
+
+    return 0;
+
 
     PkgInfo *pkg = get_pkg_info(pkg_name);
     if (pkg) {
@@ -21,7 +47,6 @@ int main(int argc, char *argv[]) {
     } else {
         printf("Package %s not found\n",pkg_name);
     }
-
     parse_command(argc, argv);
     return 0;
 }

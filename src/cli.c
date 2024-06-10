@@ -1,5 +1,6 @@
-#include "cli.h"
-#include "package_manager.h"
+#include "../include/cli.h"
+#include "../include/package_manager.h"
+#include "../include/repository.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -40,4 +41,5 @@ void parse_command(int argc, char *argv[]) {
     } else {
         printf("Unknown command: %s\n", argv[1]);
     }
+    load_repository();
 }

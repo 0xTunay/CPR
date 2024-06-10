@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcore.a CMakeFiles/core.dir/src/cli.c.o CMakeFiles/core.dir/src/dependency_manager.c.o CMakeFiles/core.dir/src/file_manager.c.o CMakeFiles/core.dir/src/repository.c.o CMakeFiles/core.dir/src/package_manager.c.o
+/usr/bin/ranlib libcore.a
