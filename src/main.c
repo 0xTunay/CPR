@@ -1,52 +1,34 @@
-// main.c
 #include "../include/cli.h"
 #include "../include/repository.h"
 #include <stdio.h>
-#include <string.h>
 
 int main(int argc, char *argv[]) {
-    char user[MAX_NAME_LINE];
- 
- 
-    printf("what do you want install?\n");
-    parse_command(argc,argv);
-    scanf("%s",user);
-    strcpy(pkg_name,user);
+    load_repository();
 
-    
-/*
-    если тру, то дальше продолжать код и вывести repostiroy, а если такого пакета не найдено, то рентун
-*/
-// сделать чтобы перед этим выводилась инфа о пакете
-    printf("Do you want to install %s repository? (Yes/No): ", pkg_name);
-    scanf("%s",user);
+    char pkg_name[MAX_NAME_LENGTH];
+    char command[MAX_NAME_LENGTH];
 
-    if (fgets(user, sizeof(user), stdin) != NULL) {
-        user[strcspn(user, "\n")] = '\0';
+    if (argc < 2) {
+        printf("Enter the name of the package: ");
+        scanf("%s", pkg_name);
+
+        PkgInfo *pkg = get_pkg_info(pkg_name);
+        if (pkg) {
+            printf("Package found: %s\n", pkg->name);
+            printf("Enter command (install, remove, update, update-all): ");
+            scanf("%s", command);
+
+            char *new_argv[3];
+            new_argv[0] = argv[0];
+            new_argv[1] = command;
+            new_argv[2] = pkg_name;
+            int new_argc = 3;
+
+            parse_command(new_argc, new_argv);
+        } else {
+            printf("Package %s not found\n", pkg_name);
+        }
     }
 
-    if (strcmp(user, "Yes") == 0) {
-        parse_command(argc, argv);
-    } else {
-        printf("Installation aborted.\n");
-        return 0;
-    }
-
-
-    return 0;
-
-
-    PkgInfo *pkg = get_pkg_info(pkg_name);
-    if (pkg) {
-        printf("Package found: %s\n", pkg->name);
-        printf("Version: %s\n", pkg->version);
-        printf("Description: %s\n", pkg->description);
-        printf("Author: %s\n", pkg->author);
-        printf("Dependencies: %s\n", pkg->dependencies);
-        printf("Files: %s\n", pkg->files);
-    } else {
-        printf("Package %s not found\n",pkg_name);
-    }
-    parse_command(argc, argv);
     return 0;
 }

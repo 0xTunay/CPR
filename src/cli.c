@@ -5,14 +5,6 @@
 #include <string.h>
 
 void parse_command(int argc, char *argv[]) {
-
-    for (int i = 0; i < argc; i++) {
-        if (i < argc - 1) {
-        }
-    }
-    for (int i = 0; i < argc; i++) {
-    }
-
     if (argc < 2) {
         printf("Usage: packman <command> [options]\n");
         return;
@@ -37,9 +29,7 @@ void parse_command(int argc, char *argv[]) {
         }
         update_package(argv[2]);
     } else if (strcmp(argv[1], "update-all") == 0) {
-        update_package(argv[2]);
     } else {
         printf("Unknown command: %s\n", argv[1]);
     }
-    load_repository();
 }
