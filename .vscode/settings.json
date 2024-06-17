@@ -6,6 +6,7 @@
         "dirent.h": "c",
         "repository.h": "c",
         "cli.h": "c",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "file_manager.h": "c"
     }
 }

@@ -1,0 +1,4 @@
+/home/tunay/pacman/build/CMakeFiles/core.dir
+/home/tunay/pacman/build/CMakeFiles/packman.dir
+/home/tunay/pacman/build/CMakeFiles/edit_cache.dir
+/home/tunay/pacman/build/CMakeFiles/rebuild_cache.dir

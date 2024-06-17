@@ -11,7 +11,6 @@ int main(int argc, char *argv[]) {
     if (argc < 2) {
         printf("Enter the name of the package: ");
         scanf("%s", pkg_name);
-
         PkgInfo *pkg = get_pkg_info(pkg_name);
         if (pkg) {
             printf("Package found: %s\n", pkg->name);
