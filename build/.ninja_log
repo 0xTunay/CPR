@@ -1,9 +1,0 @@
-# ninja log v6
-0	29	1718459129719920479	CMakeFiles/core.dir/src/dependency_manager.c.o	cffc19e724af3961
-0	29	1718459129719920479	CMakeFiles/core.dir/src/file_manager.c.o	e9279cee4f555adc
-4	39	1718459129723253970	CMakeFiles/packman.dir/src/main.c.o	12ee4ee45e130d0c
-0	39	1718459129719920479	CMakeFiles/core.dir/src/cli.c.o	27dc3ef0cd3ea665
-3	40	1718459129723253970	CMakeFiles/core.dir/src/package_manager.c.o	b6fee0f356b7c78a
-49	77	1718459129769922835	libcore.a	11226e25178b5957
-1	48	1718459129723253970	CMakeFiles/core.dir/src/repository.c.o	c06dad10268d4480
-77	92	1718459129796590759	/home/tunay/pacman/packman	95c94a01b91a5bfb
