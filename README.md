@@ -1,8 +1,11 @@
 # PackMan
 
 ## Описание
+```css 
 <h1>
-PackMan is a package management system written in C.
+Unified Program Repository
+UPR is a package management system written in C.
 </h1>
+```
 
 
