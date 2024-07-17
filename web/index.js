@@ -1,26 +1,23 @@
-const http = require('http');
-const fs = require('fs');
+const express = require('express');
 const path = require('path');
+const app = express();
 
-const server = http.createServer((req, res) => {
-    const filePath = path.join(__dirname, 'front', 'index.html');
 
-    fs.readFile(filePath, (err, data) => {
-        if (err) {
-            console.error(`Error reading file: ${err}`);
-            res.writeHead(500, {'Content-Type': 'text/plain; charset=utf-8'});
-            res.end('500 Internal Server Error');
-            return;
-        }
+app.set('view engine', 'ejs');
+app.use(express.static('public'))
 
-        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
-        res.end(data);
-    });
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.get('/', (req, res) => {
+    res.render('index');
 });
 
-const PORT = 3000;
-const HOST = 'localhost';
+app.get('/', (req, res) => {
+    res.render('install');
+});
 
-server.listen(PORT, HOST, () => {
-    console.log(`Server ON: http://${HOST}:${PORT}`);
+const PORT = 1111;
+
+app.listen(PORT, () => {
+    console.log(`Server ON: http://localhost:${PORT}`);
 });
