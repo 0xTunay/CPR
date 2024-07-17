@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/install.css">
+    <title>Package Information</title>
+</head>
+<body>
+    <div class="form-container">
+        <p>Package Name:</p>
+        <input type="text" name="name" id="name" placeholder="aur">
+
+        <p>Version:</p>
+        <input type="text" name="version" id="version" placeholder="1.0.0">
+
+        <p>Description:</p>
+        <input type="text" name="description" id="description" placeholder="This is an example package">
+
+        <p>Author:</p>
+        <input type="text" name="author" id="author" placeholder="Author Name">
+
+        <p>Dependencies:</p>
+        <input type="text" name="dependencies" id="dependencies" placeholder="dependency1, dependency2">
+
+        <p>Project Directory:</p>
+        <input type="file" name="files" id="files" webkitdirectory directory>
+
+        <p>URL on GitHub repository:</p>
+        <input type="url" name="repository_url" id="repository_url" placeholder="https://github.com/user/repo">
+        <p id="url-error" class="error-message"></p>
+
+        <button class="btn" id="install">Выгрузить</button>
+    </div>
+    <script src="script/install.js"></script>
+</body>
+</html>
