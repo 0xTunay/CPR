@@ -1,11 +1,12 @@
-#define _DEFAULT_SOURCE // for DT_REG
+#define _DEFAULT_SOURCE // for DT_REG stackoverflow
+
 #include "../include/repository.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
 
-#define MAX_PKG 100
+#define MAX_PKG 128
 #define MAX_LINE_LENGTH 256
 
 static PkgInfo packages[MAX_PKG];
@@ -51,6 +52,8 @@ void load_repository() {
                         strncpy(pkg.dependencies, value, sizeof(pkg.dependencies) - 1);
                     } else if (strcmp(key, "files") == 0) {
                         strncpy(pkg.files, value, sizeof(pkg.files) - 1);
+                    } else if(strcmp(key,"url") == 0){
+                        strcpy(pkg.url, value);
                     }
                 }
                 packages[pkg_count++] = pkg;

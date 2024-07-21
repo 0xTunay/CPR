@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(packman)
+project(UPR)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -25,12 +25,12 @@ add_library(core
     ${CORE_SRC}
 )
 
-add_executable(packman
+add_executable(UPR
     src/main.c
 )
 
-target_link_libraries(packman PRIVATE core)
+target_link_libraries(UPR PRIVATE core)
 
-set_target_properties(packman PROPERTIES
+set_target_properties(UPR PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )
