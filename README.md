@@ -30,8 +30,8 @@
   <li>Navigate to the project directory:
     <pre><code>cd UPR</code></pre>
   </li>
-  <li>Compile the project:
-    <pre><code>make</code></pre>
+  <li>Compile the project, run bash script:
+    <pre><code>./install</code></pre>
   </li>
   <li>Run the UPR program:
     <pre><code>./upr</code></pre>
@@ -54,10 +54,7 @@
   </li>
 </ul>
 
-## Contributing
-
-<p style="font-size: 1.1em;">We welcome contributions! Please read our <a href="CONTRIBUTING.md" style="color: #2980b9;">contributing guidelines</a> for more information.</p>
-
+<!-- 
 ## License
 
-<p style="font-size: 1.1em;">This project is licensed under the MIT License - see the <a href="LICENSE" style="color: #2980b9;">LICENSE</a> file for details.</p>
+<p style="font-size: 1.1em;">This project is licensed under the MIT License - see the <a href="LICENSE" style="color: #2980b9;">LICENSE</a> file for details.</p> -->
