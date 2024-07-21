@@ -1,0 +1,4 @@
+/home/tunay/UPR/build/CMakeFiles/core.dir
+/home/tunay/UPR/build/CMakeFiles/UPR.dir
+/home/tunay/UPR/build/CMakeFiles/edit_cache.dir
+/home/tunay/UPR/build/CMakeFiles/rebuild_cache.dir

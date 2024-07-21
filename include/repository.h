@@ -7,8 +7,7 @@
 #define MAX_AUTHOR_LENGTH 64
 #define MAX_DEPENDENCIES 256
 #define MAX_FILES 256
-
-
+#define MAX_URL_ADRESS 256
 
 typedef struct {
     char name[MAX_NAME_LENGTH];
@@ -17,6 +16,7 @@ typedef struct {
     char author[MAX_AUTHOR_LENGTH];
     char dependencies[MAX_DEPENDENCIES];
     char files[MAX_FILES];
+    char url[MAX_URL_ADRESS];
 } PkgInfo;
 
 void load_repository();

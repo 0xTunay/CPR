@@ -10,7 +10,7 @@ dependency_manager.h и dependency_manager.c  управления зависи�
 
 file_manager.h и file_manager.c управления файлами пакетов 
 
-packman/
+UPR/
 ├── src/
 │   ├── cli.c
 │   ├── package_manager.c
@@ -24,6 +24,16 @@ packman/
 │   ├── repository.h
 │   ├── dependency_manager.h
 │   └── file_manager.h
+├── web/
+│   ├── front/
+│        ├── index.html
+│        ├── style.css
+│        ├── UPR.html
+│        ├── upr.css
+│   ├── index.js
+│   ├── db.js
+│   ├── script/
+│        ├── upr.js
 ├── tests/
 │   ├── test_cli.c
 │   ├── test_package_manager.c

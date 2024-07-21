@@ -14,6 +14,7 @@ int main(int argc, char *argv[]) {
         PkgInfo *pkg = get_pkg_info(pkg_name);
         if (pkg) {
             printf("Package found: %s\n", pkg->name);
+            printf("Package URL: %s\n",pkg->url);
             printf("Enter command (install, remove, update, update-all): ");
             scanf("%s", command);
 

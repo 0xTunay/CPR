@@ -4,3 +4,4 @@ description=This is an example package
 author=Author Name
 dependencies=dependency1, dependency2
 files=file1, file2
+url=https://Github/Ttunay/AUR.git
