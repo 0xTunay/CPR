@@ -14,24 +14,23 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-    res.render('index');
+	res.render('index');
 });
 app.get('/menu',(req,res)=>{
-    res.render('menu')
+	res.render('menu')
 })
 const directoryPath = path.join(__dirname, 'date');
 if (!fs.existsSync(directoryPath)) {
-    fs.mkdirSync(directoryPath);
+	fs.mkdirSync(directoryPath);
 }
 
 app.post('/save', (req, res) => {
-    const formData = req.body;
+	const formData = req.body;
 
-    // Формируем имя файла и путь
-    const fileName = `package_${Date.now()}.txt`;
-    const filePath = path.join(directoryPath, fileName);
+	const fileName = `package_${Date.now()}.txt`;
+	const filePath = path.join(directoryPath, fileName);
 
-    const fileContent = `
+	const fileContent = `
 Name: ${formData.name}
 Version: ${formData.version}
 Description: ${formData.description}
@@ -41,16 +40,16 @@ Project Directory: ${formData.files}
 Repository URL: ${formData.repository_url}
 `;
 
-    fs.writeFile(filePath, fileContent, (err) => {
-        if (err) {
-            return res.status(500).send('Error writing file');
-        }
-        res.send('File created successfully');
-    });
+	fs.writeFile(filePath, fileContent, (err) => {
+		if (err) {
+			return res.status(500).send('Error writing file');
+		}
+		res.send('File created successfully');
+	});
 });
 
-const PORT = 5555;
+const PORT = 2222;
 
 app.listen(PORT, () => {
-    console.log(`Server ON: http://localhost:${PORT}`);
+	console.log(`Server ON: http://localhost:${PORT}`);
 });
