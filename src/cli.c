@@ -9,7 +9,6 @@ void parse_command(int argc, char *argv[]) {
         printf("Usage: packman <command> [options]\n");
         return;
     }
-
     if (strcmp(argv[1], "install") == 0) {
         if (argc < 3) {
             printf("Usage: packman install <package_name>\n");
