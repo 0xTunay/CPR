@@ -33,6 +33,7 @@ void update_package(const char *package_name) {
 }
 
 void initialize() {
+    // PkgInfo information = get_pkg_info(url);
     // Инициавввлизация
     load_repository();
 }

@@ -8,6 +8,12 @@
 #define MAX_DEPENDENCIES 256
 #define MAX_FILES 256
 #define MAX_URL_ADRESS 256
+ 
+typedef enum {
+INSTALL,
+REMOVE,
+UPDATEALL,
+} cmd;
 
 typedef struct {
     char name[MAX_NAME_LENGTH];

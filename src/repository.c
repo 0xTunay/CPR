@@ -18,7 +18,7 @@ void load_repository() {
     DIR *dir;
     struct dirent *entry;
 
-    dir = opendir("date");
+    dir = opendir("db");
     if (dir == NULL) {
         perror("Unable to open directory");
         return;
@@ -28,7 +28,7 @@ void load_repository() {
         // Check if entry is a regular file and has .txt extension
         if (entry->d_type == DT_REG && strstr(entry->d_name, ".txt")) {
             char filepath[256];
-            snprintf(filepath, sizeof(filepath), "date/%s", entry->d_name);
+            snprintf(filepath, sizeof(filepath), "db/%s", entry->d_name);
 
             FILE *file = fopen(filepath, "r");
             if (file) {

@@ -29,6 +29,7 @@ void download_file(const char *url, char *dest) {
 }
 
 void extract_file(const char *file_path, char *dest) {
+  
   // Извлечение файла в указанный каталог
   printf("Extracting file %s to %s...\n", file_path, dest);
   // добавить код для извлечения файла

@@ -23,10 +23,7 @@
 
         <p>Dependencies:</p>
         <input type="text" name="dependencies" id="dependencies" placeholder="dependency1, dependency2">
-
-        <p>Project Directory:</p>
-        <input type="file" name="files" id="files" webkitdirectory directory>
-
+        
         <p>URL on GitHub repository:</p>
         <input type="url" name="repository_url" id="repository_url" placeholder="https://github.com/user/repo">
         <p id="url-error" class="error-message"></p>
@@ -77,7 +74,6 @@ function saveDataToFile() {
         description: document.getElementById('description').value,
         author: document.getElementById('author').value,
         dependencies: document.getElementById('dependencies').value,
-        files: document.getElementById('files').value,
         repository_url: document.getElementById('repository_url').value
     };
 

@@ -48,7 +48,7 @@ Repository URL: ${formData.repository_url}
 	});
 });
 
-const PORT = 2222;
+const PORT = 7777;
 
 app.listen(PORT, () => {
 	console.log(`Server ON: http://localhost:${PORT}`);

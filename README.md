@@ -1,13 +1,13 @@
-# Unified Program Repository
+# Cross-platform Program Repository
 
 <p style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">UPR is a package management system written in C.</p>
 
 ## Описание
 
 
-<h2 style="color: #3498db;">Unified Program Repository</h2>
+<h2 style="color: #3498db;">Cross-platform Program Repository</h2>
 
-<p style="font-size: 1.2em;">UPR (Unified Program Repository) is a comprehensive package management system designed to streamline the installation, update, and management of software packages on your system.</p>
+<p style="font-size: 1.2em;">CPR (Cross-platform Program Repository) cross-platform software for Linux and Windows</p>
 
 ### Features
 
@@ -33,7 +33,7 @@
   <li>Compile the project, run bash script:
     <pre><code>./install</code></pre>
   </li>
-  <li>Run the UPR program:
+  <li>Run the CPR program:
     <pre><code>./upr</code></pre>
   </li>
 </ol>
@@ -44,13 +44,13 @@
 
 <ul style="font-size: 1.1em; line-height: 1.5;">
   <li><strong>Install a package:</strong>
-    <pre><code>upr install &lt;package-name&gt;</code></pre>
+    <pre><code>spr install &lt;package-name&gt;</code></pre>
   </li>
   <li><strong>Update a package:</strong>
-    <pre><code>upr update &lt;package-name&gt;</code></pre>
+    <pre><code>spr update &lt;package-name&gt;</code></pre>
   </li>
   <li><strong>Remove a package:</strong>
-    <pre><code>upr remove &lt;package-name&gt;</code></pre>
+    <pre><code>spr remove &lt;package-name&gt;</code></pre>
   </li>
 </ul>
 
