@@ -17,6 +17,7 @@ cmd get_command_type(const char *command) {
 }
 
 void parse_command(int argc, char *argv[]) {
+
     if (argc < 2) {
         printf("Usage: packman <command> [options]\n");
         return;
@@ -52,4 +53,6 @@ void parse_command(int argc, char *argv[]) {
             printf("Available commands: install, remove, updateall\n");
             break;
     }
+
+
 }
