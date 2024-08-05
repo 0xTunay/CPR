@@ -10,7 +10,7 @@
 
     <div class="form-container">
         <p>Package Name:</p>
-        <input type="text" name="name" id="name" placeholder="aur">
+        <input type="text" name="name" id="name" placeholder="name">
 
         <p>Version:</p>
         <input type="text" name="version" id="version" placeholder="1.0.0">
@@ -47,7 +47,7 @@
     });
 
     document.getElementById('install').addEventListener('click', function(event) {
-        const fields = ['name', 'version', 'description', 'author', 'dependencies', 'files', 'repository_url'];
+        const fields = ['name', 'version', 'description', 'author', 'dependencies', 'repository_url'];
         let allFieldsFilled = true;
 
         fields.forEach(field => {

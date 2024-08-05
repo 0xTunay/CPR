@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
 const path = require('path');
+const sqlite3 = require('sqlite3').verbose();
 
 const app = express();
 
@@ -26,6 +27,9 @@ if (!fs.existsSync(directoryPath)) {
     fs.mkdirSync(directoryPath);
 }
 
+const db = new sqlite3.Database('packages.db');
+
+// Старый маршрут для сохранения файла с уникальным именем
 app.post('/save', (req, res) => {
     const formData = req.body;
 
@@ -38,7 +42,6 @@ Version: ${formData.version}
 Description: ${formData.description}
 Author: ${formData.author}
 Dependencies: ${formData.dependencies}
-Project Directory: ${formData.files}
 Repository URL: ${formData.repository_url}
 `;
 
@@ -53,7 +56,7 @@ Repository URL: ${formData.repository_url}
 app.post('/save-custom', (req, res) => {
     const formData = req.body;
 
-    const fileName = `${formData.name}.txt`; // Имя файла, введенное пользователем
+    const fileName = `${formData.name}.txt`; 
     const filePath = path.join(directoryPath, fileName);
 
     const fileContent = `
@@ -62,7 +65,6 @@ Version: ${formData.version}
 Description: ${formData.description}
 Author: ${formData.author}
 Dependencies: ${formData.dependencies}
-Project Directory: ${formData.files}
 Repository URL: ${formData.repository_url}
 `;
 
@@ -70,11 +72,20 @@ Repository URL: ${formData.repository_url}
         if (err) {
             return res.status(500).send('Error writing file');
         }
-        res.send('File created successfully');
+        
+        db.run(`
+            INSERT INTO packages (name, version, description, author, dependencies, repository_url)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
+        `, [formData.name, formData.version, formData.description, formData.author, formData.dependencies, formData.repository_url], (dbErr) => {
+            if (dbErr) {
+                return res.status(500).send('Error saving data to database');
+            }
+            res.send('File created and data saved to database successfully');
+        });
     });
 });
 
-const PORT = 1111;
+const PORT = 7377;
 
 app.listen(PORT, () => {
     console.log(`Server ON: http://localhost:${PORT}`);
