@@ -4,7 +4,9 @@
 #include <stdio.h>
 #include <string.h>
 
-cmd get_command_type(const char *command) {
+
+choice get_command_type(const char *command) {
+
     if (strcmp(command, "install") == 0) {
         return INSTALL;
     } else if (strcmp(command, "remove") == 0) {
@@ -23,8 +25,7 @@ void parse_command(int argc, char *argv[]) {
         return;
     }
 
-    cmd command_type = get_command_type(argv[1]);
-
+    choice command_type = get_command_type(argv[1]);
     switch (command_type) {
         case INSTALL:
             if (argc < 3) {
@@ -53,6 +54,4 @@ void parse_command(int argc, char *argv[]) {
             printf("Available commands: install, remove, updateall\n");
             break;
     }
-
-
 }

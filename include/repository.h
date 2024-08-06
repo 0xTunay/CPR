@@ -6,14 +6,25 @@
 #define MAX_DESCRIPTION_LENGTH 256
 #define MAX_AUTHOR_LENGTH 64
 #define MAX_DEPENDENCIES 256
-#define MAX_FILES 256
 #define MAX_URL_ADRESS 256
- 
+
+#define CMD_COUNT sizeof(Command) / sizeof(command);
+
 typedef enum {
-INSTALL,
-REMOVE,
-UPDATEALL,
-} cmd;
+    INSTALL,
+    REMOVE,
+    UPDATEALL,
+} choice;
+
+
+typedef struct {
+    const char* cmd_name;
+    choice commands;
+} Cum_Shot;
+
+
+
+typedef choice (*Command)(const char *);
 
 typedef struct {
     char name[MAX_NAME_LENGTH];
@@ -21,7 +32,6 @@ typedef struct {
     char description[MAX_DESCRIPTION_LENGTH];
     char author[MAX_AUTHOR_LENGTH];
     char dependencies[MAX_DEPENDENCIES];
-    char files[MAX_FILES];
     char url[MAX_URL_ADRESS];
 } PkgInfo;
 
