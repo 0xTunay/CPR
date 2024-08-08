@@ -2,7 +2,7 @@
 #include "../include/package_manager.h"
 #include <stdio.h>
 
-CommandFunction get_command_function(choice cmd) {
+command_function get_command_function(choice cmd) {
   switch (cmd) {
     case INSTALL:
       return install_package;

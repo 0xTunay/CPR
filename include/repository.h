@@ -15,7 +15,7 @@ typedef enum {
     UNKNOWN
 } choice;
 
-typedef void (*CommandFunction)(const char *pkg_name);
+typedef void (*command_function)(const char *pkg_name);
 
 typedef struct {
     char name[MAX_NAME_LENGTH];
@@ -30,6 +30,6 @@ void load_repository();
 PkgInfo *get_pkg_info(const char *pkg_name);
 void add_pkg(const PkgInfo *package);
 void remove_pkg(const char *pkg_name);
-CommandFunction get_command_function(choice cmd); // Function returning a function pointer
+command_function get_command_function(choice cmd); // Function returning a function pointer
 
 #endif // REPOSITORY_H
