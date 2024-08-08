@@ -1,5 +1,6 @@
 #include "../include/cli.h"
 #include "../include/repository.h"
+#include "../include/dependency_manager.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
@@ -35,13 +36,26 @@ int main(int argc, char *argv[]) {
       char *cmd2 = strtok(NULL, space);
       char *pkgname = strtok(NULL, space);
 
+      PkgInfo *pkg = malloc(sizeof(PkgInfo));
+
       if (pkgname) {
         strcpy(pkg_name, pkgname);
         PkgInfo *pkg = get_pkg_info(pkg_name);
+
         if (pkg) {
           printf("Package found: %s\n", pkg->name);
           printf("Package URL: %s\n", pkg->url);
+          printf("Dependecy: %s\n",pkg->dependencies);
 
+          char *dependencies = pkg->dependencies;
+          if(dependencies == NULL )
+          {
+            puts("Nothing dependency");
+            continue;
+
+          } else {
+            check_dependencies(dependencies);
+          }
           char *argv_new[3] = {cmd1, cmd2, pkgname};
           int argc_new = 3;
           parse_command(argc_new, argv_new);
@@ -56,7 +70,6 @@ int main(int argc, char *argv[]) {
 
       free(command); 
     }
-  }
-
+}
   return 0;
 }
