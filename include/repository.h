@@ -6,25 +6,16 @@
 #define MAX_DESCRIPTION_LENGTH 256
 #define MAX_AUTHOR_LENGTH 64
 #define MAX_DEPENDENCIES 256
-#define MAX_URL_ADRESS 256
-
-#define CMD_COUNT sizeof(Command) / sizeof(command);
+#define MAX_URL_ADDRESS 256
 
 typedef enum {
     INSTALL,
     REMOVE,
     UPDATEALL,
+    UNKNOWN
 } choice;
 
-
-typedef struct {
-    const char* cmd_name;
-    choice commands;
-} Cum_Shot;
-
-
-
-typedef choice (*Command)(const char *);
+typedef void (*CommandFunction)(const char *pkg_name);
 
 typedef struct {
     char name[MAX_NAME_LENGTH];
@@ -32,12 +23,13 @@ typedef struct {
     char description[MAX_DESCRIPTION_LENGTH];
     char author[MAX_AUTHOR_LENGTH];
     char dependencies[MAX_DEPENDENCIES];
-    char url[MAX_URL_ADRESS];
+    char url[MAX_URL_ADDRESS];
 } PkgInfo;
 
 void load_repository();
 PkgInfo *get_pkg_info(const char *pkg_name);
 void add_pkg(const PkgInfo *package);
 void remove_pkg(const char *pkg_name);
+CommandFunction get_command_function(choice cmd); // Function returning a function pointer
 
 #endif // REPOSITORY_H
