@@ -7,16 +7,17 @@
 
 void download_file(const char *url, char *dest) {
     char DownloadPath[MAX_PATH_LENGTH];
+    
+    size_t lenght = sizeof(DownloadPath) / sizeof(DownloadPath[0]);
 
-    printf("Введите путь\n");
+    puts("enter path ");
     fgets(DownloadPath,sizeof(DownloadPath),stdin);
 
         DownloadPath[strcspn(DownloadPath, "\n")] = 0;
 
-    size_t lenght = strlen(DownloadPath);
     dest = (char*)malloc((lenght +1 ) * sizeof(char));
     if(dest == NULL) {
-     fprintf(stderr, "Ошибка выделения памяти\n");
+     fprintf(stderr, "error memory\n");
         exit(1);
     }
     strcpy(dest, DownloadPath);

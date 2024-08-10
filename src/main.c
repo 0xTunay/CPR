@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
 
   while (1) {
     if (argc < 2) {
-      puts("Write cmd:");
+      puts("enter cmd:");
       if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
         perror("fgets failed");
         return 1;

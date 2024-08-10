@@ -11,14 +11,15 @@ choice get_command_type(const char *command) {
 }
 
 void parse_command(int argc, char *argv[]) {
+  
+  choice command_type = get_command_type(argv[1]);
+  command_function command_function = get_command_function(command_type);
+
   if (argc < 2)
   {
     puts("Usage: packman <command> [options]");
     return;
   }
-
-  choice command_type = get_command_type(argv[1]);
-  command_function command_function = get_command_function(command_type);
 
   if (command_function == NULL) 
   {
