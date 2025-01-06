@@ -4,7 +4,7 @@
 
 void check_dependencies(const char *dependecies_name) 
 {
-    char command[128];
+    char command[MAX_COMMAND_LINE];
     int cmd = system(command);
 
     snprintf(command, sizeof(command), "%s --version\n", dependecies_name);
@@ -18,7 +18,7 @@ void check_dependencies(const char *dependecies_name)
 
 void resolve_dependencies(const char *pkg_name){
 
-    char command[128];
+    char command[MAX_COMMAND_LINE];
     int cmd_result = system(command);
 
     printf("Resolving dependencies for %s...\n", pkg_name);

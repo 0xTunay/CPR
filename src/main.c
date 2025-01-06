@@ -8,7 +8,7 @@
 int main(int argc, char *argv[]) {
   load_repository();
 
-  char buffer[100];
+  char buffer[MAX_BUFFER_SIZE];
   char pkg_name[MAX_NAME_LENGTH];
   char *command;
   char space[] = " ";
@@ -65,7 +65,7 @@ int main(int argc, char *argv[]) {
           printf("Package %s not found\n", pkg_name);
         }
       } else {
-        printf("No package name provided in the command.\n");
+        puts("No package name provided in the command.\n");
       }
 
       free(command); 

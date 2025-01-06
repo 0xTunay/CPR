@@ -6,9 +6,6 @@
 #include <string.h>
 #include <dirent.h>
 
-#define MAX_PKG 128
-#define MAX_LINE_LENGTH 256
-
 static PkgInfo packages[MAX_PKG];
 static int pkg_count = 0;
 
@@ -27,7 +24,7 @@ void load_repository() {
   while ((entry = readdir(dir)) != NULL) {
     // Check if entry is a regular file and has .txt extension
     if (entry->d_type == DT_REG && strstr(entry->d_name, ".txt")) {
-      char filepath[256];
+      char filepath[MAX_PATH_LENGTH];
       snprintf(filepath, sizeof(filepath), "db/%s", entry->d_name);
 
       FILE *file = fopen(filepath, "r");

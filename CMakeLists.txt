@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(CPR)
+project(URP)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -25,12 +25,12 @@ add_library(core
     ${CORE_SRC}
 )
 
-add_executable(CPR
+add_executable(URP
     src/main.c
 )
 
-target_link_libraries(CPR PRIVATE core)
+target_link_libraries(URP PRIVATE core)
 
-set_target_properties(CPR PROPERTIES
+set_target_properties(URP PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )

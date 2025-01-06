@@ -2,7 +2,6 @@
 
 <p style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">UPR is a package management system written in C.</p>
 
-## Описание
 
 
 <h2 style="color: #3498db;">Cross-platform Program Repository</h2>
