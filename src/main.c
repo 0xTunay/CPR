@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 
 int main(int argc, char *argv[]) {
   load_repository();
@@ -17,8 +18,8 @@ int main(int argc, char *argv[]) {
     if (argc < 2) {
       puts("enter cmd:");
       if (fgets(buffer, sizeof(buffer), stdin) == NULL) {
-        perror("fgets failed");
-        return 1;
+        fprintf(stderr,"fgets failed", strerror(errno));
+        exit(EXIT_FAILURE);
       }
 
       int leng = strlen(buffer);
@@ -59,17 +60,17 @@ int main(int argc, char *argv[]) {
           char *argv_new[3] = {cmd1, cmd2, pkgname};
           int argc_new = 3;
           parse_command(argc_new, argv_new);
-          free(command);
-          break; 
+          // free(command);
+          // break; 
         } else {
-          printf("Package %s not found\n", pkg_name);
+            printf("Package %s not found\n", pkg_name);
         }
       } else {
-        puts("No package name provided in the command.\n");
+          puts("No package name provided in the command.\n");
       }
 
       free(command); 
     }
-}
+  }
   return 0;
 }
