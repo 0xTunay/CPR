@@ -1,7 +1,7 @@
 # Минимальная версия CMake
 cmake_minimum_required(VERSION 3.30)
 
-project(UPR C)
+project(CPR C)
 set(CMAKE_C_STANDARD 99)
 
 set(SRC_DIR "${CMAKE_SOURCE_DIR}/src")
@@ -28,13 +28,13 @@ add_library(core STATIC
     ${INCLUDE}
 )
 
-add_executable(UPR ${SRC_DIR}/main.c)
+add_executable(CPR ${SRC_DIR}/main.c)
 
-target_link_libraries(UPR PRIVATE core)
+target_link_libraries(CPR PRIVATE core)
 
-set_target_properties(UPR PROPERTIES
+set_target_properties(CPR PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}"
 )
 
 target_include_directories(core PUBLIC ${INCLUDE_DIR})
-target_include_directories(UPR PRIVATE ${INCLUDE_DIR})
+target_include_directories(CPR PRIVATE ${INCLUDE_DIR})

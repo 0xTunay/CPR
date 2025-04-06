@@ -1,6 +1,6 @@
 # Cross-platform Program Repository
 
-<p style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">UPR is a package management system written in C.</p>
+<p style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">CPR is a package management system written in C.</p>
 
 
 
@@ -20,20 +20,20 @@
 
 ### Installation
 
-<p style="font-size: 1.1em;">To install UPR, follow these steps:</p>
+<p style="font-size: 1.1em;">To install CPR, follow these steps:</p>
 
 <ol style="font-size: 1.1em; line-height: 1.5;">
   <li>Clone the repository:
-    <pre><code>git clone https://github.com/yourusername/UPR.git</code></pre>
+    <pre><code>git clone https://github.com/0xTunay/CPR.git</code></pre>
   </li>
   <li>Navigate to the project directory:
-    <pre><code>cd UPR</code></pre>
+    <pre><code>cd CPR</code></pre>
   </li>
   <li>Compile the project, run bash script:
-    <pre><code>./install</code></pre>
+    <pre><code>./install.sh</code></pre>
   </li>
   <li>Run the CPR program:
-    <pre><code>./upr</code></pre>
+    <pre><code>./CPR</code></pre>
   </li>
 </ol>
 
