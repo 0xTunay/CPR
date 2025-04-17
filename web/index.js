@@ -37,12 +37,12 @@ app.post('/save', (req, res) => {
     const filePath = path.join(directoryPath, fileName);
 
     const fileContent = `
-Name: ${formData.name}
-Version: ${formData.version}
-Description: ${formData.description}
-Author: ${formData.author}
-Dependencies: ${formData.dependencies}
-Repository URL: ${formData.repository_url}
+        Name: ${formData.name}
+        Version: ${formData.version}
+        Description: ${formData.description}
+        Author: ${formData.author}
+        Dependencies: ${formData.dependencies}
+        Repository URL: ${formData.repository_url}
 `;
 
     fs.writeFile(filePath, fileContent, (err) => {
@@ -85,7 +85,7 @@ Repository URL: ${formData.repository_url}
     });
 });
 
-const PORT = 7377;
+const PORT = 2222;
 
 app.listen(PORT, () => {
     console.log(`Server ON: http://localhost:${PORT}`);

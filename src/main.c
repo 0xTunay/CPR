@@ -6,9 +6,8 @@
 #include <string.h>
 #include <errno.h>
 
-int main(int argc, char *argv[]) {
+int main(int argc) {
   load_repository();
-
   char buffer[MAX_BUFFER_SIZE];
   char pkg_name[MAX_NAME_LENGTH];
   char *command;
@@ -37,7 +36,6 @@ int main(int argc, char *argv[]) {
       char *cmd2 = strtok(NULL, space);
       char *pkgname = strtok(NULL, space);
 
-      PkgInfo *pkg = malloc(sizeof(PkgInfo));
 
       if (pkgname) {
         strcpy(pkg_name, pkgname);
