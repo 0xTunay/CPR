@@ -1,13 +1,12 @@
-# Unified Program Repository
+# Cross-platform Program Repository
 
-<p style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">UPR is a package management system written in C.</p>
-
-## Описание
+<p style="font-size: 1.5em; font-weight: bold; color: #2c3e50;">CPR is a package management system written in C.</p>
 
 
-<h2 style="color: #3498db;">Unified Program Repository</h2>
 
-<p style="font-size: 1.2em;">UPR (Unified Program Repository) is a comprehensive package management system designed to streamline the installation, update, and management of software packages on your system.</p>
+<h2 style="color: #3498db;">Cross-platform Program Repository</h2>
+
+<p style="font-size: 1.2em;">CPR (Cross-platform Program Repository) cross-platform software for Linux and Windows</p>
 
 ### Features
 
@@ -21,20 +20,20 @@
 
 ### Installation
 
-<p style="font-size: 1.1em;">To install UPR, follow these steps:</p>
+<p style="font-size: 1.1em;">To install CPR, follow these steps:</p>
 
 <ol style="font-size: 1.1em; line-height: 1.5;">
   <li>Clone the repository:
-    <pre><code>git clone https://github.com/yourusername/UPR.git</code></pre>
+    <pre><code>git clone https://github.com/0xTunay/CPR.git</code></pre>
   </li>
   <li>Navigate to the project directory:
-    <pre><code>cd UPR</code></pre>
+    <pre><code>cd CPR</code></pre>
   </li>
-  <li>Compile the project:
-    <pre><code>make</code></pre>
+  <li>Compile the project, run bash script:
+    <pre><code>./install.sh</code></pre>
   </li>
-  <li>Run the UPR program:
-    <pre><code>./upr</code></pre>
+  <li>Run the CPR program:
+    <pre><code>./CPR</code></pre>
   </li>
 </ol>
 
@@ -44,20 +43,17 @@
 
 <ul style="font-size: 1.1em; line-height: 1.5;">
   <li><strong>Install a package:</strong>
-    <pre><code>upr install &lt;package-name&gt;</code></pre>
+    <pre><code>spr install &lt;package-name&gt;</code></pre>
   </li>
   <li><strong>Update a package:</strong>
-    <pre><code>upr update &lt;package-name&gt;</code></pre>
+    <pre><code>spr update &lt;package-name&gt;</code></pre>
   </li>
   <li><strong>Remove a package:</strong>
-    <pre><code>upr remove &lt;package-name&gt;</code></pre>
+    <pre><code>spr remove &lt;package-name&gt;</code></pre>
   </li>
 </ul>
 
-## Contributing
-
-<p style="font-size: 1.1em;">We welcome contributions! Please read our <a href="CONTRIBUTING.md" style="color: #2980b9;">contributing guidelines</a> for more information.</p>
-
+<!-- 
 ## License
 
-<p style="font-size: 1.1em;">This project is licensed under the MIT License - see the <a href="LICENSE" style="color: #2980b9;">LICENSE</a> file for details.</p>
+<p style="font-size: 1.1em;">This project is licensed under the MIT License - see the <a href="LICENSE" style="color: #2980b9;">LICENSE</a> file for details.</p> -->

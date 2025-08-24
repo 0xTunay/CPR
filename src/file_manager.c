@@ -3,20 +3,19 @@
 #include <string.h>
 #include <stdlib.h>
 
-#define MAX_PATH_LENGTH 256
-
 void download_file(const char *url, char *dest) {
     char DownloadPath[MAX_PATH_LENGTH];
+    
+    size_t lenght = sizeof(DownloadPath) / sizeof(DownloadPath[0]);
 
-    printf("Введите путь\n");
+    puts("enter path ");
     fgets(DownloadPath,sizeof(DownloadPath),stdin);
 
         DownloadPath[strcspn(DownloadPath, "\n")] = 0;
 
-    size_t lenght = strlen(DownloadPath);
     dest = (char*)malloc((lenght +1 ) * sizeof(char));
     if(dest == NULL) {
-     fprintf(stderr, "Ошибка выделения памяти\n");
+     fprintf(stderr, "error memory\n");
         exit(1);
     }
     strcpy(dest, DownloadPath);
@@ -29,13 +28,14 @@ void download_file(const char *url, char *dest) {
 }
 
 void extract_file(const char *file_path, char *dest) {
-  // Извлечение файла в указанный каталог
+  
+  //  exstract file to directory
   printf("Extracting file %s to %s...\n", file_path, dest);
-  // добавить код для извлечения файла
+  // add code for extracting to directory
 }
 
 void remove_files(const char *package_name) {
-  // Удаление файлов пакета
+  // deleted packeg files 
   printf("Removing files for package %s...\n", package_name);
-  //  добавить код для удаления файлов пакета
+  //  add code for deleted to directory
 }
